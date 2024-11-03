@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go",
+			"output": "${workspaceFolder}/awesomethingsshop",
+            "debugAdapter": "legacy",
+            "env": {
+				"DB_PARAMS": "user=website password=123 dbname=website_dev sslmode=disable host=localhost port=6432",
+				"PORT": "9000",
+				"PUBLISH_URL": "http://localhost:9001"
+			},
+            "args": []
+        }
+    ]
+}
