@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: web
+    build: ../awesomethingsshop
+    ports:
+      - 9000-9010:9000-9010
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+
+  db:
+    container_name: postgres
+    image: postgres
+    environment:
+      - "POSTGRES_USER=website"
+      - "POSTGRES_PASSWORD=123"
+      - "POSTGRES_DB=website_dev"
+    ports:
+      - "6432:5432"
