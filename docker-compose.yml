@@ -1,11 +1,10 @@
-version: '3.7'
-
 services:
   web:
     container_name: web
     build: ../awesomethingsshop
     ports:
-      - 9000-9010:9000-9010
+      - 9000:9000
+      - 9001:9001
     env_file:
       - ./.env.dev
     depends_on:
