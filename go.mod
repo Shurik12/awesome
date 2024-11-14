@@ -16,6 +16,7 @@ require (
 
 require (
 	github.com/NYTimes/gziphandler v1.1.1 // indirect
+	github.com/Shurik12/go-yamusic-api v0.0.0-20241107163046-5b0eca4b5c48
 	github.com/boombuler/barcode v1.0.1 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/disintegration/imaging v1.6.2 // indirect
@@ -41,6 +42,7 @@ require (
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/lib/pq v1.10.9 // indirect
 	github.com/markbates/goth v1.77.0 // indirect
+	github.com/ndrewnee/go-yamusic v1.1.0 // indirect
 	github.com/ory/ladon v1.2.0 // indirect
 	github.com/ory/pagination v0.0.1 // indirect
 	github.com/pborman/uuid v1.2.1 // indirect
