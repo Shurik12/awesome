@@ -3,13 +3,11 @@ services:
     container_name: web
     build: ../awesomethingsshop
     ports:
-      - 9000:9000
-      - 9001:9001
+      - 9000-9010:9000-9010
     env_file:
       - ./.env.dev
     depends_on:
       - db
-
   db:
     container_name: postgres
     image: postgres

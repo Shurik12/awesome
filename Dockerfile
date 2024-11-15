@@ -1,15 +1,11 @@
-FROM golang:1.22.5-alpine as builder
-RUN apk update && apk add git gcc libc-dev && rm -rf /var/cache/apk/*
-ARG GITHUB_TOKEN
-WORKDIR /qor5
-COPY . .
-RUN set -x && go get -d -v ./...
-RUN GOOS=linux GOARCH=amd64 go build -o /app/entry ./
-
-FROM alpine:3.16
-RUN apk --update upgrade && \
-    apk add ca-certificates && \
-    apk add tzdata && \
-    rm -rf /var/cache/apk/*
-COPY --from=builder /app/entry  /bin/awesomethingsshop
-CMD sleep 15 && /bin/awesomethingsshop
+FROM debian
+SHELL [ "/bin/bash", "-c" ]
+WORKDIR /root
+RUN \
+    apt update -y && apt upgrade -y && \
+    apt install procps -y && \
+    apt install lsof -y && \
+    rm -rf /var/cache/apt/*
+COPY  awesomethingsshop  /root/awesomethingsshop
+COPY  publish /root/publish
+CMD sleep 15 && ./awesomethingsshop
