@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/Shurik12/awesomethingsshop/admin"
+	"github.com/Shurik12/awesome/admin"
 )
 
 func main() {
