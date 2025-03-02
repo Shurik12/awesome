@@ -1,7 +1,7 @@
 services:
   web:
-    container_name: web
-    build: ../awesomethingsshop
+    container_name: awesome-web
+    build: ../awesome
     ports:
       - 9000-9010:9000-9010
     env_file:

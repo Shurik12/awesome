@@ -7,6 +7,7 @@ build() {
 
 start() {
 	docker-compose up -d
+	docker exec -it awesome-web bash
 }
 
 stop() {
