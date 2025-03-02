@@ -3,6 +3,7 @@ package config
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"time"
 
@@ -19,7 +20,10 @@ type Config struct {
 		Port string `yaml:"port"`
 
 		// Authentication token to access wildberies api
-		Auth_token string `yaml:"auth_token"`
+		WBAuthToken string `yaml:"wb_auth_token"`
+
+		// Authentication token to access yandex music api
+		YAMusicAuthToken string `yaml:"yamusic_auth_token"`
 
 		Timeout struct {
 			// Server is the general server timeout to use
@@ -97,4 +101,20 @@ func ParseFlags() (string, error) {
 
 	// Return the configuration path
 	return configPath, nil
+}
+
+func createConfig() (*Config, error) {
+	// Read and process config file =========================
+	configPath, err := ParseFlags()
+	if err != nil {
+		log.Fatal(err)
+		return &Config{}, err
+	}
+	config, err := NewConfig(configPath)
+	if err != nil {
+		log.Fatal(err)
+		return config, err
+	}
+
+	return config, nil
 }

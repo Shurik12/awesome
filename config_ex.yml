@@ -2,7 +2,8 @@
 awesome:
   host: 127.0.0.1
   port: 8080
-  auth_token: dadfbsgfnhmnedymuyeu
+  wb_auth_token: <your_wildberies_token>
+  yamusic_auth_token: <your_yandex_music_token>
   timeout:
     server: 30
     read: 15

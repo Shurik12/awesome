@@ -8,21 +8,14 @@ import (
 	"os"
 
 	"github.com/Shurik12/awesome/admin"
-	"github.com/Shurik12/awesome/config"
 )
 
 func main() {
 
-	// Read and process config file =========================
-	configPath, err := config.ParseFlags()
-	if err != nil {
-		log.Fatal(err)
-	}
-	config, err := config.NewConfig(configPath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("Auth token: %s\n", config.Awesome.Auth_token)
+	config, err := config.createConfig()
+
+	fmt.Printf("Auth token: %s\n", config.Awesome.WBAuthToken)
+	fmt.Printf("Auth token: %s\n", config.Awesome.YAMusicAuthToken)
 	// ======================================================
 
 	// CMS server
