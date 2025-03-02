@@ -7,16 +7,15 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/Shurik12/awesome/admin"
+	"awesome/admin"
+	"awesome/config"
 )
 
 func main() {
-
-	config, err := config.createConfig()
-
-	fmt.Printf("Auth token: %s\n", config.Awesome.WBAuthToken)
-	fmt.Printf("Auth token: %s\n", config.Awesome.YAMusicAuthToken)
-	// ======================================================
+	_, err := config.CreateConfig()
+	if err != nil {
+		return
+	}
 
 	// CMS server
 	port := os.Getenv("PORT")

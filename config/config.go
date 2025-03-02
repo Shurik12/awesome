@@ -103,7 +103,7 @@ func ParseFlags() (string, error) {
 	return configPath, nil
 }
 
-func createConfig() (*Config, error) {
+func CreateConfig() (*Config, error) {
 	// Read and process config file =========================
 	configPath, err := ParseFlags()
 	if err != nil {
@@ -115,6 +115,9 @@ func createConfig() (*Config, error) {
 		log.Fatal(err)
 		return config, err
 	}
+
+	fmt.Printf("Auth token: %s\n", config.Awesome.WBAuthToken)
+	fmt.Printf("Auth token: %s\n", config.Awesome.YAMusicAuthToken)
 
 	return config, nil
 }
