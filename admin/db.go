@@ -32,6 +32,8 @@ func initWebsiteData(db *gorm.DB) {
 			panic(err)
 		}
 	}
+
+	return
 }
 
 func initMediaLibraryData(db *gorm.DB) {
@@ -45,4 +47,6 @@ func initMediaLibraryData(db *gorm.DB) {
 			panic(err)
 		}
 	}
+
+	return
 }

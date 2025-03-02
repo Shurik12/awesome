@@ -16,7 +16,6 @@ func main() {
 	if port == "" {
 		port = "9000"
 	}
-
 	cmsMux := admin.InitApp()
 	cmsServer := &http.Server{
 		Addr:    ":" + port,
