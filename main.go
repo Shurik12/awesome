@@ -12,10 +12,13 @@ import (
 )
 
 func main() {
+
+	// Read and process config ===========================================
 	_, err := config.CreateConfig()
 	if err != nil {
 		return
 	}
+	// ===================================================================
 
 	// CMS server
 	port := os.Getenv("PORT")
