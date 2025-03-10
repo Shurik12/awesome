@@ -1,12 +1,26 @@
 #!/bin/bash
 
-
 build() {
 	docker-compose build
 }
 
 start() {
 	docker-compose up -d
+}
+
+build() {
+	docker-compose up -d --no-deps --build
+}
+
+psql() {
+	docker-compose -f docker-compose.postgres.yaml up -d
+}
+
+copy() {
+	docker cp awesome awesome-web:/root/awesome
+}
+
+exec() {
 	docker exec -it awesome-web bash
 }
 

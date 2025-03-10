@@ -7,7 +7,7 @@
             "request": "launch",
             "mode": "debug",
             "program": "${workspaceFolder}/main.go",
-			"output": "${workspaceFolder}/awesomethingsshop",
+			"output": "${workspaceFolder}/awesome",
             "debugAdapter": "legacy",
             "env": {
 				"DB_PARAMS": "user=website password=123 dbname=website_dev sslmode=disable host=localhost port=6432",
